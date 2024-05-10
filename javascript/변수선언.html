@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>변수(호이스팅)</h1>
+</body>
+</html>
+<script>
+    var a = 100;
+    var a = 200;
+    if (true){
+        var a = 500;
+        /* 인터프리터 언어인 javascript에선 괄호 안에서 변수를 선언해도 전역 변수가 됨 */
+    }
+    console.log("a = ",a)
+</script>
