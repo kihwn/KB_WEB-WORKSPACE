@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var input = prompt("Date를 이용하세요!"); 
+        var result = input; 
+        if (result>=2000){
+            alert("밀레니엄 세대시군요!");
+        }
+        if (result<2000){
+            alert("밀레니엄 세대가 아니시군요!");
+        }
+        
+
+        console.log("result = ",result)
+
+        var input2 = prompt("원하는 기호를 넣으세요: ");
+        var symbol = input2;
+        
+        var input3 = prompt("원하는 횟수를 넣으세요: ");
+        var num = parseInt(input3);
+
+        for (var i=1; i<num; i++){
+            symbol+= " "+input2+" ";
+        }
+        alert(symbol);
+        
+        var total = 0;
+
+        while(true){
+            var input4 = prompt("1)증가, 2)감소, 3)종료를 선택해주세요 : ");
+            var select = parseInt(input4);
+
+            if (select==1){
+                total+=1;
+                alert("카운트: "+total+"입니다.");
+            }
+            if (select==2){
+                total-=1;
+                alert("카운트: "+total +"입니다.\n ");
+            }
+            if (select==3){
+                alert("시스템을 종료합니다. 현재까지의 카운트는 "+total);
+                break;
+            }
+    
+
+        }
+
+        
+
+        
+
+        
+
+    
+
+
+        
+
+
+
+
+        
+
+    
+        
+    </script>
+    
+    
+</body>
+</html>
