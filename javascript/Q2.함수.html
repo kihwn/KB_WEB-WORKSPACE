@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div>
+    <label for="userID">아이디 입력: </label>
+    <input type="text" id="userid" name="userid">
+</div>
+
+<div>
+    <label for="userPassword">패스워드: </label>
+    <input type="password" id="userpassword" name="userpassword">
+</div>
+
+<div>
+    <label for="checkPassword">패스워드 확인: </label>
+    <input type="password" id="checkpassword" name="checkpassword">
+</div>
+<div>
+    <button onclick="check()">확인</button>
+</div>
+
+<img src="" id="imagePlace">
+
+<div id="result"></div>
+
+    <script>
+        function check(){
+            var userId = document.getElementById("userid").value;
+            var userPassword = document.getElementById("userpassword").value;
+            var checkPassword = document.getElementById("checkpassword").value;
+
+            if (userId.length<5){
+                alert("아이디 글자 수 5 미만입니다. 다시 입력해주세요.");
+            }
+
+            if (userPassword!=checkPassword){
+                document.getElementById("result").innerHTML ="불일치!";
+                document.getElementById("result").innerHTML ="불일치!";
+                let img = document.getElementById("imagePlace");
+                img.src = 'images/bear.jpg';
+                img.alt="불일치 사진이라 치자";
+            }
+            if (userPassword==checkPassword){
+                document.getElementById("result").innerHTML="일치!";
+                let img = document.getElementById("imagePlace");
+                img.src = 'images/cat.jpg';
+                img.alt="일치사진이라 치자";
+            }
+        }
+    </script>
+</body>
+</html>

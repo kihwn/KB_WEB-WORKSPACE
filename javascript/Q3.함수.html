@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="jeju">제주도로</button>
+    <button type="button" id="japan">일본으로</button>
+    <button type="button" id="hawaii">하와이로</button>
+
+    <img src="" alt="위 버튼을 눌러주세요" id="travleImage">
+    
+</body>
+</html>
+<script>
+    window.onload = function(){
+        let btn = document.getElementById("jeju");
+        btn.addEventListener("click", ()=>{
+            let img = document.getElementById("travleImage");
+            img.src = 'images/bear.jpg';
+            img.alt="제주도 사진이라 치자";
+        });
+
+    
+
+        let btn2 = document.getElementById("japan");
+        btn2.addEventListener("click", ()=>{
+            let img = document.getElementById("travleImage");
+            img.src = 'images/cat.jpg';
+            img.alt="일본 사진이라 치자";
+        });
+
+        let btn3 = document.getElementById("hawaii");
+        btn3.addEventListener("click", ()=>{
+            let img = document.getElementById("travleImage");
+            img.src = 'images/photo.jpg';
+            img.alt="하와이 사진이라 치자";
+        });
+    }
+</script>

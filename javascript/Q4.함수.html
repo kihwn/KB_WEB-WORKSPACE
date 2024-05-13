@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="store">구매상점 입력: </label>
+        <input type="text" id="store" name="store">
+    </div>
+    <div>
+        <label for="price">결제금액 입력: </label>
+        <input type="text" id="price" name="price">
+    </div>
+    <div>
+        
+        <label for="paymentType">결제수단 선택: </label>
+        <select id="paymentType">
+            <option value="계좌이체">계좌이체</option>
+            <option value="신용카드">신용카드</option>
+            <option value="휴대폰 결제">휴대폰</option>
+        </select>
+        
+        <div>
+            <button onclick="print()">결제금액 계산</button>
+        </div>
+
+        <div id="result"></div>
+        
+    </div>
+    <script>
+        let storeName="";
+
+    function savePaymentType() {
+        selectedPaymentType = document.getElementById("paymentType").value;
+    }
+
+    function print(){
+        let paymentType = document.getElementById("paymentType").value;
+        let storeName=document.getElementById("store").value;
+        let price=parseInt(document.getElementById("price").value);
+
+        if (price==2){
+            price+=1000;
+        }
+
+        if(price==3){
+            price+=500;
+        }
+
+        let message = storeName+"에서 최종 결제금액: " + price + "원 "+paymentType+"로 구매하셨습니다.";
+        document.getElementById("result").innerHTML = message;
+}
+
+
+
+    </script>
+</body>
+</html>
