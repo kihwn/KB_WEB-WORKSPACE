@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>람다(화살표 함수)</h1>
+    <p>일반 함수는 메모리를 시작부터 끝까지 차지한다. 그래서 잠깐 쓰고 버리는 함수들
+        메모리 활용 융통성을 높이기 위한 함수표현식, 람다와 같은 형식이 필요했음
+        함수표현식은 함수의 이름이 없는 함수이다. 
+        주의사항 : this를 사용 못한다.
+    </p>
+</body>
+</html>
+<script>
+    //일반함수
+    function add(x,y){
+        return x+y;
+    }
+    
+    let sub = function(x,y){
+        return x-y;
+    }
+
+    let mul = (x,y)=>x*y; //(매개변수들)=> 수식 - 한줄일 경우 return{} 생략
+                        //{} 있을 경우 return 생략 불가
+
+    console.log(add(8,5));
+    console.log(sub(8,5));
+    console.log(mul(8,5));
+</script>

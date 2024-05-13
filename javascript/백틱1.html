@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>백틱(`: 키보드 왼쪽의 물결무늬 키 + 영어)</h1>
+</body>
+</html>
+<script type = "text/javascript">
+    let name = "혜원";
+    let age = 27;
+    //호이스팅 - 변수를 {} 안에 선언할 경우에는 대부분의 언어에서 그 블럭에서만
+    //변수가 존재해야 한다. 그러나 var 키워드는 스코프룰에 어긋나서
+    //이름이 같은 변수를 동일 변수로 인식하여서 변수를 재선언하거나
+    //{}안에서만 선언해도 블럭밖에서 접근되어도 문제를 일으키지 않는다.
+    //이걸 '호이스팅'이라고 한다. -> let로 교체
+    // 함수의 {}은 예외, 지역 변수로 인식하기 때문에 문제가 안된다.
+
+    let 
+    s =`${name}님의 나이는 
+    ${age}입니다.`;
+    console.log(s);
+</script>

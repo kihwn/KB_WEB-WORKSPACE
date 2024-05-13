@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<p>
+    <h1>요소 접근하기</h1>
+    
+        document : html 문서를 개체화 하였음 <br/>
+        document.getElementById("id 속성"); //무조건 단수임 <br/>
+        documnet.querySelector("#id속성"); //무조건 단수임 - 새로 나온 함수<br/>
+
+        --------------------------------<br/>
+        document.getElementsByTagName("태그명") //잘 사용되지 않음. 배열로 옴(무조건 복수)
+        document.getElementsByName("name속성")
+        document.getElementsByclassName("class속성")
+        document.querySelectorAll(".class속성")
+    </p>
+
+    <p id="content1">스타일 변경하기</p>
+    <p id="content2">스타일 변경하기2</p>
+    <p class="content3">스타일 변경하기3</p>
+    <p class="content4">스타일 변경하기4</p>
+    <p class="content5">스타일 변경하기5</p>
+    
+    <button type="button" id ="btn1">id로 접근</button> <br/>
+    <button type="button" id ="btn2">클래스로 접근</button> <br/>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        
+        let btn1 = document.getElementById("btn1");
+    
+        btn1.addEventListener("click",function(){
+            document.getElementById("content1").style.color="#ff0000";
+        });
+        let btn2 = document.getElementById("btn2");
+        
+        btn2.addEventListener("click",function(){
+            let ptags = document.getElementsByClassName("content3");
+            for (i=0; i<ptags.length; i++){
+            ptags[i].style.color = "#00ff00";}
+        });
+    }
+</script>

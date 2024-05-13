@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- input 태그 내에 name과 id 속성 모두 있는 경우-->
+    x : <input type="text" name="x" id="x"> <br/>
+    y : <input type="text" name="y" id="y"> <br/>
+    <button type="button" id="btnAdd">더하기</button>
+    <button type="button" id="btnSub">빼기</button>
+    <div id="result"></div>
+</body>
+</html>
+
+<script>
+    window.onload=()=>{
+        let btnAdd = document.querySelector("#btnAdd");
+        let btnSub = document.querySelector("#btnSub");
+
+        //id로 호출하는 경우
+        btnAdd.addEventListener("click",()=>{ 
+            let x = document.getElementById("x").value;
+            let y = document.getElementById("y").value;
+            let result = parseInt(x)+parseInt(y);
+            document.getElementById("result").innerHTML = result;
+        })
+
+
+        //name으로 호출하는 경우
+        btnSub.addEventListener("click",()=>{
+            //name으로 호출할 경우 꼭 배열로 호출해야 함. 배열 값이 하나라면 [0]으로. 
+            let x = document.getElementsByName("x")[0].value;
+            let y = document.getElementsByName("y")[0].value;
+            let result = parseInt(x)+parseInt(y);
+            document.getElementById("result").innerHTML = result;
+        })
+
+
+
+    }
+</script>

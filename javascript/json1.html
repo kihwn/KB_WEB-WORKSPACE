@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>json1.html</h1>
+</body>
+</html>
+<script>
+    //본래의 json은 키값에 "", '' 없어도 된다.
+    //문법적으로 파이썬의 Dict 타입과 유사
+    //자바의 HashMap
+    let person={"name":"홍길동", age:23, "email":"hong@hanmail.net", "main-address":"서울시"};
+
+    console.log(person);
+    console.log(person.name);
+    console.log(person.age);
+    console.log(person.email);
+    //console.log(person.main-address); //에러발생. key 값에 -가 들어가면 .로 호출 불가
+    
+
+    console.log(person["name"]);
+    console.log(person["age"]);
+    console.log(person["email"]);
+    console.log(person["maina-ddress"]);
+
+    person["phone"] ="010-0000-0001";
+    let persons = [
+        {name:"김혜원",age:25},
+        {name:"김우정",age:25},
+        {name:"신짱구",age:5}
+    ];
+
+    for (i=0; i<persons.length; i++){
+        console.log(`${persons[i].name}님의 나이는 ${persons[i].age}입니다`);
+    }
+    for (i in persons){
+        console.log(`${persons[i].name})님의 나이는 ${persons[i].age}입니다`);
+    }
+    
+    for (person of persons){
+        console.log(`${persons.name}님의 나이는 ${persons.age}입니다`);
+    }
+
+    persons.forEach(p => console.log( `${p.name}님의 나이는 ${p.age}입니다 `));
+</script>

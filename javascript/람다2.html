@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>람다</h1>
+</body>
+</html>
+<script>
+    //숫자, 문자배열에 대해서 람다 적용하기
+    let arr1 = [56,7,8,9,11,14,13,22,67,15,33,42];
+
+    let even_arr=[]; //even_arr=new Array();
+    let odd_arr=[]; //odd_arr=new Array();
+    for(i=0; i<arr1.length; i++){
+        if (arr1[i]%2==0){
+            even_arr.push(arr1[i]);
+        }
+        else{
+            odd_arr.push(arr1[i]);
+        }
+    }
+    console.log(even_arr);
+    console.log(odd_arr);
+
+    //콜백함수가 매개변수 하나를 가져가서 true 또는 false를 반환하게 됨.
+    //이 때 false를 반환하면 true값만 모아서 배열에 넣어 전달하는 것이 filter함수다.
+    even_arr = arr1.filter(x => x%2==0);
+    console.log(even_arr);
+
+    arr1.filter(x=> x%2==0)
+        .forEach(x=>console.log(x)); 
+        //forEach구문은 최종 구문이라고도 함. 이 뒤에는 점을 찍을 수 없음.
+        //forEach는 배열로 반환하지않음.
+
+        //map - 연산을 가한 값을 반환한다.
+
+    let arr2 = arr1.map(x=> x+10);
+    console.log(arr2);
+
+    //짝수만 골라서 10씩 더하자
+    arr1.filter(a=> a %2==0)
+        .map(a=> a+10)
+        .forEach(x=>console.log(x));
+
+</script>

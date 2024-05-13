@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이벤트 핸들러</h1>
+    <button type="button" onclick="alert('press')">누르기1</button>
+    <button type="button" onclick="goPress()">누르기2</button>
+    <button type="button" id="btnPress">누르기3</button>
+</body>
+</html>
+<script>
+    function goPress(){
+        alert("^-------------^");
+    }
+
+    let btn = document.getElementById("btnPress");
+    btn.addEventListener("click", ()=>{
+        alert(">________<");
+    });
+
+    window.onload = function(){
+        let btn = document.getElementById("btnPress");
+        btn.addEventListener("click", ()=>{
+        alert(">________<");
+        });
+    }
+</script>
