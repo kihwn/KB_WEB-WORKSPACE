@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        #result {
+            margin-top: 30px;
+        }
+        .comment{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>그림을 본 느낌은?</h2>
+    </div>
+    <div>
+        <img src='이미지/baby.png' alt="아기" id="babyImage">
+    </div>
+    <div>
+        <input type="text" id="inputText" name="inputText">
+        <button id = "btn" onclick="write2()">댓글 달기</button>
+    </div>
+    
+    <div id="result"></div>
+
+<script>
+
+    $(document).ready( function(){
+        let btn = $("#btn");
+        btn.click(function(){
+            let comment = $("#inputText").val();
+            const result = $("#result");
+            const commentDiv = $("<div></div>").addClass("comment");
+            //commentDiv.classList.add("comment");
+            //commentDiv.innerHTML=`
+            commentDiv.html(`<img src='이미지/reply.png'>${comment}<hr style="border-top: 2px solid red;">`);
+        //<img src='이미지/reply.png'>${commentText}
+        //<hr style="border-top: 2px solid red;"">`;
+        result.append(commentDiv);
+        //comment.value="";
+        $("#inputText").val("");
+            
+        })
+    })
+
+
+/*function write2(){
+    const comment = document.getElementById("inputText");
+    const commentText = comment.value.trim();
+    
+    if(commentText!==""){
+        const result = document.getElementById("result");
+        const commentDiv = document.createElement("div");
+        commentDiv.classList.add("comment");
+        commentDiv.innerHTML = `
+        <img src='이미지/reply.png'>${commentText}
+        <hr style="border-top: 2px solid red;"">`;
+        result.appendChild(commentDiv);
+        comment.value ="";
+    }else{
+        alert("댓글을 입력하세요.");
+    }
+}
+*/
+
+</script>
+</body>
+</html>

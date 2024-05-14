@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <body>
+        x:<input type="text" id="x"><br/>
+        y:<input type="text" id="y"><br/>
+        <button type="button" id="btnAdd">+</button>
+        <button type="button" id="btnSub">-</button>
+        <button type="button" id="btnMul">*</button>
+        <button type="button" id="btnDiv">/</button>
+        <div id="result"></div>
+    </body>
+    
+</body>
+</html>
+<script>
+    $(document).ready( function(){
+        //alert("jquery");
+        let btnAdd = $("#btnAdd"); //document.Element ~랑 같은 기능
+        btnAdd.click(()=>{
+            let x = parseInt($("#x").val());
+            let y = parseInt($("#y").val());
+            $("#result").html(x+y);
+        })
+        let btnMinus = $("#btnSub");
+        btnMinus.click(()=>{
+            let x = parseInt($("#x").val());
+            let y = parseInt($("#y").val());
+            $("#result").html(x-y);
+            //속성 바꾸는 방법. css의경우
+            $("#result").css("color", "#ff0000");
+            //이미지 src 활용하고자 하는 경우
+            $("#result").prop("style","background-color:#00ff00");
+            
+        })
+    })
+</script>
