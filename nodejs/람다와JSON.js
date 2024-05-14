@@ -47,13 +47,17 @@ function compare(a,b){
 
 function sort(){
     //scores.sort(compare);
-    scores.sort((a,b)=> a.total-b.total);
-    console.log(scores);
+    //scores.sort((a,b)=> a.total-b.total);
+    //console.log(scores);
+    scores.toSorted((a,b)=>b.total - a.total)
+    .forEach(s=>{
+        console.log(`${s.name} ${s.total} ${s.avg}`);
+    })
 
 }
 
 //output();
 process();
-console.log("------------");
-search(80);
+//console.log("------------");
+//search(80);
 sort();
