@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        이름: <input type="text" name="name" id="name"><br/>
+        국어: <input type="text" name="kor" id="kor"><br/>
+        영어: <input type="text" name="eng" id="eng"><br/>
+        수학: <input type="text" name="mat" id="mat"><br/>
+
+        <button type="button" onclick="addList" id="btnAppend">추가</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+                <th>수학</th>
+                <th>총점</th>
+                <th>평균</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+    
+</body>
+</html>
+<script>
+let scores =  [
+    {id:1, name:"김혜원",kor:100, eng:98, mat:90},
+    {id:2, name:"김우정",kor:98,eng:100,mat:100},
+    {id:3, name:"피카츄",kor:90,eng:80,mat:70},
+    {id:4, name:"신짱구",kor:70,eng:85,mat:80}
+];
+function onload(){
+    //테이블에 tbody 객체를 가져온다.
+    let tbody = document.querySelector("#tbody");
+    scores.forEach(s=>{
+        let trow = tbody.insertRow(tbody.rows.length); //맨마지막에 행을 추가한다.
+        let cell1 = trow.insertCell(0);
+        let cell2 = trow.insertCell(0);
+        let cell3 = trow.insertCell(0);
+        let cell4 = trow.insertCell(0);
+        let cell5 = trow.insertCell(0);
+        cell1.innerHTML = s.name;
+        cell2.innerHTML = s.kor;
+        cell3.innerHTML = s.eng;
+        cell4.innerHTML = s.mat;
+        cell5.innerHTML = s.kor+s.eng+s.mat;
+    })}
+    window.onload= ()=>{
+        onLoad();
+    }
+
+    function addList(){
+        const name = document.getElementById("name");
+        const kor = parseInt(document.getElementById("kor"));
+        const eng = paseInt(document.getElementById("eng"));
+        const mat = parseInt(document.getElementById("mat"));
+        let tbody = document.querySelector("#tbody");
+        let trow = tbody.insertRow(tbody.rows.length);
+        const cell1 = trow.insertCell(0);
+        const cell2 = trow.insertCell(1);
+        const cell3 = trow.insertCell(2);
+        const cell4 = trow.insertCell(3);
+        const cell5 = trow.insertCell(4);
+        const cell6 = trow.insertCell(5);
+        cell1.innerHTML = name;
+        cell2.innerHTML = kor;
+        cell3.innerHTML = eng;
+        cell4.innerHTML = mat;
+        cell5.innerHTML = kor+eng+mat;
+        cell6.innerHTML = kor+eng+mat/3;
+
+    }
+
+</script>
