@@ -58,25 +58,7 @@ function onload(){
     }
 
     function addList(){
-        const name = document.getElementById("name");
-        const kor = parseInt(document.getElementById("kor"));
-        const eng = paseInt(document.getElementById("eng"));
-        const mat = parseInt(document.getElementById("mat"));
-        let tbody = document.querySelector("#tbody");
-        let trow = tbody.insertRow(tbody.rows.length);
-        const cell1 = trow.insertCell(0);
-        const cell2 = trow.insertCell(1);
-        const cell3 = trow.insertCell(2);
-        const cell4 = trow.insertCell(3);
-        const cell5 = trow.insertCell(4);
-        const cell6 = trow.insertCell(5);
-        cell1.innerHTML = name;
-        cell2.innerHTML = kor;
-        cell3.innerHTML = eng;
-        cell4.innerHTML = mat;
-        cell5.innerHTML = kor+eng+mat;
-        cell6.innerHTML = kor+eng+mat/3;
-
+        
     }
 
 </script>
