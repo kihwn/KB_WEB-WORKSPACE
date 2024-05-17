@@ -118,10 +118,24 @@ function getUserInfo(request, response){
 }
 
 //http://127.0.0.1:3000/input
+//npm install ejs
+let ejs = require("ejs");
 function input(request, response){
     //파일을 동기로 읽을 수 있고 비동기로 읽을 수 있는데
     //이번엔 동기로 읽기 (그래서 readFileSync로 되어있고, 그냥 readFile로 되어있으면 비동기임.)
     var fileData = fs.readFileSync("./html/input.html","utf8");
-    response.writeHead(200,{'Content-Type':'text/html'});
-    response.end(fileData);
+    let data = ejs.render(fileData,{
+        "title":"EJS engine",
+        "writer":["hyewon","woojunging","jenny","krystal"],
+        "scores":[
+            {"name":"A", "kor":100, "mat":100},
+            {"name":"B", "kor":98, "mat":97},
+            {"name":"C", "kor":95, "mat":82},
+            {"name":"D", "kor":100, "mat":70}
+        ]});
+    response.writeHead(200,{'Content-Type':'text/html'}); 
+    //ejs 엔진의 역할 : javascript와 html을 합쳐서 새로운 html 문서를 만드는 것.(렌더링)
+    //그것이 동적인 웹페이지(톰캣의 역할을 해줌).
+    //서버 run 해보면 input html 파일속 <h1><%=title%></h1>가 <h1>EJS engine</h1>으로 렌더링 되어 나옴.
+    response.end(data);
 }
