@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <%for(i=0; i<list.length; i++){%>
+            <li>
+                <a href="/score/view<%=list[i].id%>"><%=list[i].id%> <%=list[i].name%> <%=list[i].kor%> <%=list[i].eng%> <%=list[i].mat%></li>
+               
+        
+                    <%}%>
+                </ul>
+        <a href="/score/write">점수 등록</a>
+</body>
+</html>

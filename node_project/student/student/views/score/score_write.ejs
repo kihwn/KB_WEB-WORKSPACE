@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post" name="myform">
+        name: <input type="text" name="name" id="name"><br/>
+        kor: <input type="text" name="kor" id="kor"><br/>
+        eng: <input type="text" name="eng" id="eng"><br/>
+        mat: <input type="text" name="mat" id="mat"><br/>
+        
+        <button type = "button" id="btnSave">등록</button>
+    </form>
+    
+</body>
+</html>
+<script>
+    //온로드를 안쓰면 script위치에 따라서 됐다가 안됐다가 되기도 하는데
+    //onload를 쓰면 언제나 성공할 수 있음.
+    window.onload=()=>{
+        document.getElementById("btnSave").addEventListener(
+            "click",function(){
+                let frm = document.myform;
+                //frm에 접근하는 방식 중 하나로 document.myform인 객체 값을 가져옴.
+                frm.action="/score/save";
+                frm.submit(); //서버로 정보를 전송하란 뜻. 
+            })
+    }
+</script>
