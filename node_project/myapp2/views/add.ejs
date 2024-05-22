@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- button을 누르면 button 태그에 type="button"이 없을 경우
+        submit로 안다. 그래서 form 태그의 action 속성인
+        /add이면서 method가 post인 라우터로 이동을 한다.
+        get방식 /add일 경우 add.ejs가 화면에 떠야 하고
+        post방식 /add일 경우 전달받은 값을 연산해서 화면에 출력해야 한다-->
+    <form action="/add" method="post">
+    x : <input type="text" name="x" id="x"><br/>
+    y : <input type="text" name="y" id="y"><br/>
+    <button>더하기</button>
+    </form>
+</body>
+</html>
