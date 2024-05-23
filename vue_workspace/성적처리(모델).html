@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>성적처리</h1>
+        이름: <input v-model="name"> <br/>
+        국어: <input v-model="kor"> <br/>
+        영어: <input v-model="eng"> <br/>
+        수학: <input v-model="mat"> <br/>
+
+        <button type = "button" v-on:click="getResult">확인</button>
+        <br/>
+
+        <span style="color:red; font-size: 20px;">{{result}}</span><br/>
+
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                name:"",
+                kor:0,
+                eng:0,
+                mat:0,
+                result:""
+            }
+        },
+        methods:{
+            //함수들을 키와 값의 형태로 반환
+            getResult:function(){
+                let result = parseInt(this.kor)+parseInt(this.eng)+parseInt(this.mat); //this가 없는 이 result는 위 result와 다른 것.
+                this.result = `${this.name}의 총점은 ${result}`;
+            }
+            
+        }
+    }).mount("#app");
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <span>카운트 : {{count}} </span><br/>
+        <button type="button" @click="count++"></button>
+        <button type="button" @click="count--"></button>
+
+        </button>
+    </div>
+    
+</body>
+</html>
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                count:0
+            }
+        }
+    }).mount("#app");
+</script>

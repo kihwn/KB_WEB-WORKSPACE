@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <h1>파일명: userinfo.html</h1>
+    <div id ="app">
+        <h1>이름 : {{name}}</h1>
+        <h1>전화 : {{phone}}</h1>
+        <h1>주소 : {{address}}</h1>
+        <h1>제목: {{book.title}}</h1>
+        <h1>작가: {{book.author}}</h1>
+        <h1>플랫폼: {{book.flatform}}</h1>
+    </div>
+    
+</body>
+</html>
+<script>
+    let app = Vue.createApp({
+        //model -> JSON 형태로 데이터를 반환. 
+        data(){
+            return{
+                "name":"깜꼬",
+                "phone":"010-0000-0001",
+                "address":"서울시 광진구",
+                "book":{
+                    title:"쌍갑포차",
+                    author:"배혜수",
+                    flatform:"다음"
+                }
+            }
+        }
+    }).mount("#app");
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id ="app">
+        <h1>속성바인딩: 태그의 속성에 부여한다</h1>
+        <div v-bind:id="id">id가 동적으로 부여된다.</div>
+        <a v-bind:href="url">다음으로 이동</a><br/>
+        <!-- 약어: v-bing 생략-->
+        <a : href ="url">다음으로 이동</a><br/>
+    </div>
+
+
+</body>
+</html>
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                id:'test',
+                url:"https://www.daum.net/"
+            }
+        }
+    }).mount("#app");
+</script>

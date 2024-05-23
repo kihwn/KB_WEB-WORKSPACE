@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>v-model : input 태그와 변수를 연결한다</h1>
+        <p>input 태그에서 입력을 하면 이걸 변수와 연동하려고 한다.</p>
+        <span>{{message}}</span>
+        <input v-model="message">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                message:"안녕하세요"
+            }
+        }
+    }).mount("#app");
+</script>

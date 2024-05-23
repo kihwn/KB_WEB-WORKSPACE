@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>텍스트 보간법: {{rawHTML}}</p>
+        <p>v-html 디렉티브:<span v-html="rawHTML"></span></p> <!--v-html은 반드시 태그 안에 넣어야 함. span 태그가 적합함.-->
+    </div>
+</body>
+</html>
+
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                rawHTML:"<h1 style='color:red'>템플릿을 배워보자</h1>"
+            }
+        }
+    }).mount("#app");
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>사칙연산</h1>
+        X: <input v-model="x"> <br/>
+        Y: <input v-model="y"> <br/>
+
+        <button type = "button" v-on:click="plus">+</button>
+        <button type = "button" v-on:click="minus">-</button>
+        <button type = "button" v-on:click="multiple">*</button>
+        <button type = "button" v-on:click="divide">/</button>
+        <br/>
+
+        <span style="color:violet; font-size: 20px;">{{result}}</span><br/>
+
+
+    </div>
+    
+</body>
+</html>
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                x:5,
+                y:6,
+                result:11
+            }
+        },
+        methods:{
+            plus:function() {
+                    this.result = parseInt(this.x) + parseInt(this.y);
+                },
+            minus:function() {
+                    this.result = parseInt(this.x) - parseInt(this.y);
+                },
+            multiple:function() {
+                    this.result = parseInt(this.x) * parseInt(this.y);
+                },
+            divide:function() {
+                    this.result = parseInt(this.x)/parseInt(this.y);
+                    
+                }
+            
+        }
+    }).mount("#app");
+</script>

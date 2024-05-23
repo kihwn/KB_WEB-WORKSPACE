@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span id ="count">0</span>
+        <button type="button" id="btnIncrease">+</button>
+        <button type="button" id ="btnDecrease">-</button>
+    </div>
+    
+</body>
+</html>
+
+
+<script>
+    var count = 0;
+    var btnIncrease = document.querySelector("#btnIncrease");
+    var btnDecrease = document.querySelector("#btnDecrease");
+
+    btnIncrease.addEventListener("click",()=>{
+        let count = document.querySelector("#count").innerHTML;
+        count = parseInt(count)+1;
+        document.querySelector("#count").innerHTML = count;
+    })
+    btnDecrease.addEventListener("click",()=>{
+        let count = document.querySelector("#count").innerHTML;
+        count = parseInt(count)-1;
+        document.querySelector("#count").innerHTML = count;
+    })
+</script>
