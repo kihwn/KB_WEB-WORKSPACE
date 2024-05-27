@@ -12,10 +12,10 @@
         X: <input v-model="x"> <br/>
         Y: <input v-model="y"> <br/>
 
-        <button type = "button" v-on:click="plus">+</button>
-        <button type = "button" v-on:click="minus">-</button>
-        <button type = "button" v-on:click="multiple">*</button>
-        <button type = "button" v-on:click="divide">/</button>
+        <button type = "button" v-on:click="add">+</button>
+        <button type = "button" v-on:click="sub">-</button>
+        <button type = "button" v-on:click="mul">*</button>
+        <button type = "button" v-on:click="div">/</button>
         <br/>
 
         <span style="color:violet; font-size: 20px;">{{result}}</span><br/>
@@ -35,16 +35,16 @@
             }
         },
         methods:{
-            plus:function() {
+            add:function() {
                     this.result = parseInt(this.x) + parseInt(this.y);
                 },
-            minus:function() {
+            sub:function() {
                     this.result = parseInt(this.x) - parseInt(this.y);
                 },
-            multiple:function() {
+            mul:function() {
                     this.result = parseInt(this.x) * parseInt(this.y);
                 },
-            divide:function() {
+            div:function() {
                     this.result = parseInt(this.x)/parseInt(this.y);
                     
                 }

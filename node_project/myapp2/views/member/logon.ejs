@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form action="" method="post">
+    아이디 : <input type="text" name="userid" id="userid"><br/>
+    패스워드 : <input type="password" name="password" id="password"><br/>
+    <button type="button" id="btnLogon">로그온</button>
+   </form> 
+</body>
+</html>
+<script>
+    window.onload=()=>{
+        document.querySelector("#btnLogon").addEventListener("click",()=>{
+            //submit - 동기식, 전체 문서가 서버로 전달되어야 한다.
+            //비동기식 - 백그라운드 통신을 한다
+            //fetch - Promise 기반, then 구문
+            //서버로 보내기 위한 데이터를 JSON 형태로 기술한다. 
+            const data = {
+                userid:document.querySelector("#userid").value,
+                password:document.querySelector("#password").value
+
+            }
+            fetch("http://127.0.0.1:3000/member/logon",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json",
+                },
+                body:JSON.stringify(data)
+            }
+            )
+            .then(res =>{return res.json()})
+        
+            .then(res=> {
+                alert(res.msg);
+                console.log(res);
+                if (res.result=="OK"){
+                    //다른 페이지로 이동
+                    location.href="/guestbook/list";
+                }
+            })
+            .catch(err=>{
+                console.log(err);
+            })
+
+        });
+    }
+</script>

@@ -9,6 +9,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var guestbookRouter = require('./routes/guestbook');
+var memberRouter = require('./routes/member');
 //var guestbookRouter은 외부 모듈을 들고 온다는 뜻.
 
 var app = express(); //서버 생성
@@ -36,6 +37,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 //앞으로 오게 될 모든 url중에 /geustbook으로 시작하는 건 guestbookRouter가 처리하게 될 것이란 의미.
 app.use('/guestbook', guestbookRouter);
+app.use('/member', memberRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

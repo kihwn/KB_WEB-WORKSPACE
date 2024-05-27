@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <counter></counter>
+        <counter></counter>
+        <counter></counter>
+        <!-- 태그 형태로 컴포넌트를 가져와서 재사용할 수 있음 -->
+    </div>
+
+    
+    
+</body>
+</html>
+<script>
+    Vue.createApp({
+        "components":{
+            "counter":{
+                data(){
+                    return{ //return 뒤에 집합표시 생략 절대 X.
+                        count:0
+                    }
+                },
+                "template"://디자인파트
+                `<div>
+                    <h3>현재 카운트: {{count}}</h3>
+                    <button type="button" v-on:click="increase">++</button>
+                    <button type="button" v-on:click="decrease">--</button>
+                </div> `,
+            "methods" :{
+                "increase":function(){
+                    this.count++;
+                },
+                "decrese":function(){
+                    this.count--;
+                }
+            }
+            }
+        }
+    }).mount("#app");
+</script>

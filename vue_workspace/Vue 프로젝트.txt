@@ -1,0 +1,6 @@
+npm init vue@latest : 가장 최신버전으로
+프로젝트가 만들어질 폴더로 옮겨가야 한다.
+cmd 창에서
+
+npm init vue@latest
+vue-project 이름이 자동으로 만들어진다. 

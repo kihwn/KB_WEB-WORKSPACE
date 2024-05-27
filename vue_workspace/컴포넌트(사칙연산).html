@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <calculator></calculator>
+
+    </div>
+   
+    
+</body>
+</html>
+<script>
+    Vue.createApp({
+        "components":{
+            "calculator":{
+                data(){
+                    return{
+                        x:0,
+                        y:0,
+                        result:0
+                    }
+                },
+                "template":
+                
+                `<div>
+                    <h1>사칙연산</h1>
+                    X: <input v-model="x"> <br/>
+                    Y: <input v-model="y"> <br/>
+                    <h3>계산 결과: {{result}}</h3>
+                    <button type = "button" v-on:click="add">+</button>
+                    <button type = "button" v-on:click="sub">-</button>
+                    <button type = "button" v-on:click="mul">*</button>
+                    <button type = "button" v-on:click="div">/</button>
+                </div>`,
+            "methods":{
+                "add":function() {
+                    this.result = parseInt(this.x) + parseInt(this.y);
+                },
+                "sub":function() {
+                    this.result = parseInt(this.x) - parseInt(this.y);
+                },
+                "mul":function() {
+                    this.result = parseInt(this.x) * parseInt(this.y);
+                },
+                "div":function() {
+                    this.result = parseInt(this.x)/parseInt(this.y);
+                    
+                }
+            }
+
+            }
+        }
+
+    }).mount("#app");
+</script>

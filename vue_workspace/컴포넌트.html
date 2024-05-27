@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-component></my-component>
+
+    </div>
+</body>
+</html>
+
+<script>
+    Vue.createApp({
+        data(){
+            return{
+                count:0
+            }
+        },
+
+        "components":{ //json 안에 json 형태. event 형태의 method를 붙일 수 있음.
+            "my-component":{ 
+                "template": //디자인파트
+                    `<div
+                        <h3 style='color:blue' v-on:click='click'>MyComponent</h3>
+                        <h3 style='color:red'>This is first component</h3></div>`,
+                "methods":{
+                    "click": function(){
+                        alert("click");
+                    }
+                }
+            }
+
+        }
+    }).mount("#app")
+</script>
