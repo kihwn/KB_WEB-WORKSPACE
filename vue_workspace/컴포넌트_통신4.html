@@ -1,0 +1,48 @@
+<!--부모의 JSON 객체를 자식에게 보내는 경우-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <!-- 태그에 속성을 추가하고 속성을 통해 전달한다. 그래서 v-bind를 이용한다.
+        속성 : 스테이크 표기법(props-data) = > 컴포넌트에서는 카멜표기법(propsData) -->
+    <div id="app">
+        <child-component v-bind:person="person">
+        </child-component>
+    </div>
+</body>
+</html>
+<script>
+    Vue.createApp({
+        components:{
+            'child-component':
+            {
+                //부모로부터 값을 받아온다
+                props:["person"],
+                //template은 <div>태그로 꼭 묶어줘야 하는 문법! (V3에서 에러가 안나긴 하지만, 그래도 꼭 div로 감싸기.)
+                template:`
+                    <div>
+                    <h3>{{person.name}}</h3>
+                    <h3>{{person.address}}</h3>
+                    <h3>{{person.phone}}</h3>
+                    </div>
+                `
+            }
+        },
+        //부모한테 데이터가 있음
+        data(){
+            return {
+                person:{
+                    name:"꼼뇽",
+                    address:"서울",
+                    phone:"010-xxxx-xxxx"
+                }
+            }
+        }
+    }).mount("#app");
+</script>
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <!-- 태그에 속성을 추가하고 속성을 통해 전달한다. 그래서 v-bind를 이용한다. -->
+    <div id="app">
+        <child-component v-bind:propsdata="message"></child-component>
+    </div>
+</body>
+</html>
+<script>
+    Vue.createApp({
+        components:{
+            'child-component':
+            {
+                //부모로부터 값을 받아온다
+                props:["propsdata"],
+                template:`
+                    <h3>Child Component {{propsdata}}</h3>
+                `
+            }
+        },
+        //부모한테 데이터가 있음
+        data(){
+            return {
+                message:"Hello Vue"
+            }
+        }
+    }).mount("#app");
+</script>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+<!--부모의 배열 data를 자식에게 보내는 경우-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <!-- 태그에 속성을 추가하고 속성을 통해 전달한다. 그래서 v-bind를 이용한다.
+        속성 : 스테이크 표기법(props-data) = > 컴포넌트에서는 카멜표기법(propsData) -->
+    <div id="app">
+        <list-component v-for="item in personList" 
+        v-bind:person="item"
+        v-bind:key="item.id"
+        v-on:select-value="selectValue"> 
+        <!-- v-for로 반복문 처리 --> 
+        </list-component>
+    </div>
+</body>
+</html>
+<script>
+    Vue.createApp({
+        components:{
+            //item 하나만 간직하게 
+            'list-component': //이름만 바뀜. 어떻게 여러 개의 list 값을 가져오지?
+            {
+                props:["person"],
+                //template은 <div>태그로 꼭 묶어줘야 하는 문법! (V3에서 에러가 안나긴 하지만, 그래도 꼭 div로 감싸기.)
+                template:`
+                    <div v-on:click="$emit('select-value',person.id)">
+                    <h3>{{person.name}}</h3>
+                    <h3>{{person.address}}</h3>
+                    <h3>{{person.phone}}</h3>
+                    </div>
+                `,
+            }
+        },
+
+        //부모한테 데이터가 있음
+        data(){
+            return {
+                personList:[
+                    {id:1, name:"곰뇽", address:"양천구",phone:"1234"},
+                    {id:2, name:"깜꼬", address:"광진구",phone:"4567"},
+                    {id:3, name:"뇽따", address:"신공연구실",phone:"6789"},
+                    {id:4, name:"벼리", address:"멀캠",phone:"000"},
+                ],
+                person:{
+                    name:"곰뇽",
+                    address:"양천구",
+                    phone:"1234"
+                }
+            }
+        },
+        methods:{
+            selectValue:function(id){
+                alert(this.personList[id-1].name);
+            }
+        }
+    }).mount("#app");
+</script>
+

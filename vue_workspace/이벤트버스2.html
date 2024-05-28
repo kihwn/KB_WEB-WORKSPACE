@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-component v-on:parent-function1="parentFunction1"
+                      v-on:parent-function2="parentFunction2" 
+                      v-on:parent-function3="parentFunction3"
+                      v-on:parent-function4="parentFunction4"
+        />
+    </div>
+</body>
+</html>
+
+<script>
+    Vue.createApp({
+
+        components:{ 
+            'my-component':{ 
+                template:  //매개변수로 함수 뒤에 아무것도 안넣을 수도 있고, 값을 넣을 수도 있고, json 값을 넣을 수도 있음. 그치만 값은 하나만 넣어야 함.
+                //$emit('부모함수명',전달할 값) // 전달할 값이 String일 경우엔 큰따옴표 말고 작은따옴표에 담아야함. 오류 발생!
+                    `<div>
+                        <button type="button" v-on:click="$emit('parent-function1')">
+                            클릭1</button><br/>
+                        <button type="button" v-on:click="$emit('parent-function2',10)">
+                            클릭2</button><br/>
+                        <button type="button" v-on:click="$emit('parent-function3','hello')">
+                            클릭3</button><br/>
+                        <button type="button" v-on:click="$emit('parent-function4',{name:'깜꼬',age:5})">
+                            클릭4</button><br/>
+                    </div>`
+                ,
+                    }
+                },
+                methods:{
+                    parentFunction1:function(){
+                        alert("click");
+                    },
+                    parentFunction2:function(a){
+                        alert(a+" clicked");
+                    },
+                    parentFunction3:function(b){
+                        alert(b);
+                    },
+                    parentFunction4:function(obj){
+                        alert(obj.name+" "+obj.age);
+                    },
+                }
+            }).mount("#app")
+</script>
