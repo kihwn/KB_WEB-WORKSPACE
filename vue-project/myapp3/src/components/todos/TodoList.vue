@@ -21,6 +21,14 @@ export default {
             todoList:[]
         }
     },
+    //window.onload나 $(document).ready에 해당된다.
+    //created를 통해 클릭을 하지 않아도 화면에 데이터를 바로 보일 수 있게 함.
+    
+    created:function(){
+        this.loadData();
+
+}
+,
     
     methods:{
         loadData:function(){
