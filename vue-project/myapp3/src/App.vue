@@ -1,12 +1,14 @@
 <script setup>
 //import HeroMain from "./components/hero/HeroMain.vue";
-import TodoList from "./components/todos/TodoList.vue";
+//import TodoList from "./components/todos/TodoList.vue";
+import PhotoList from "./components/photos/PhotoList.vue";
 </script>
 <template>
-  <h1>Hero</h1>
+  <h1>사진 띄우기</h1>
   <hr>
   <!--<HeroMain></HeroMain>-->
-  <TodoList></TodoList>
+  <!--<TodoList></TodoList>-->
+  <PhotoList></PhotoList>
 </template>
 <style scoped>
 </style>
