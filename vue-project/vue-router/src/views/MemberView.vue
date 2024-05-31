@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        <h1>{{members[0].name}}</h1>
+        
     </div>
 </template>
 <script>
