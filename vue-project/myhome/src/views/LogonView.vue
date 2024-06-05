@@ -32,8 +32,17 @@
 <script>
 //ref ==>객체도 되고 원시타입(기본타입)
 import {ref, reactive} from 'vue';
+import{useRouter, useRoute} from 'vue-router';
+//페이지 이동은 useRouter 객체
+//그동안 이동했던 페이지 정보는 useRoute가 갖고 있다.
 export default {
     setup(){
+        //페이지 이동을 하려면 router를 사용해야 하고, 
+        //이동하고 있는 라우팅 정보를 저장하는 객체는 route 객체가 있다.
+        
+        const router = useRouter(); //라우터 안에는 push함수가 있음. => 이동할 페이지 정보를 
+        const route = useRoute(); //전달할 정보는 to=/about는 route가 가져온다. http://localhost:5173/logon?to=/about 중 to=/about는 route가 가져옴
+        //SPA(Single Page Application), loacation.href 나 <a></a> 태그를 가급적 쓰지 않음. 
         const userInfo =  reactive({userid:"", password:"", username:""});
         //백앤드서버에서 데이터를 원래는 가져와야 한다
         const userList = [
@@ -65,6 +74,12 @@ export default {
 
             sessionStorage.setItem("userid",user.userid);
             sessionStorage.setItem("username",user.username);
+            //파라미터나 쿼리는 route에 있음.
+            let path = route.query.to?route.query.to:"/"; //이동할 경로에 대한 정보 등등 ...
+            
+        
+            console.log(path);
+            router.push({path:path});
         }
     
         //반드시 리턴시켜야 템플릿에서 사용이 가능하다.

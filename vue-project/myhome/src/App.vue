@@ -8,6 +8,9 @@ import HelloWorld from './components/HelloWorld.vue'
   <nav style="margin-left:30px;" class="navbar navbar-expand-sm bg-yellow navbar-dark">
         <RouterLink class="nav-link" to="/">Home</RouterLink>
         <RouterLink class="nav-link" to="/about">About</RouterLink>
+        <RouterLink class="nav-link" to="/slot">Slot</RouterLink>
+        <RouterLink class="nav-link" to="/board/list/1">게시판</RouterLink>
+        <RouterLink class="nav-link" to='{name:"BoardList",params:{page:1}}'>게시판2</RouterLink>
         <!-- RouterLink에 to ="경로명"
         Router 지정시 /board/list/:page 이런식으로, 그리고 name속성 지정으로
       또는 :to={name:경로명이름, params:파라미터값}-->
