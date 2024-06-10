@@ -21,6 +21,21 @@ const router = createRouter({
       path: '/counter',
       name:'counter',
       component:()=>import('../views/CounterView.vue')
+    },
+    {
+      path:'/calculator',
+      name:'calculator',
+      component:()=>import('../views/CalculatorView.vue')
+    },
+    {
+      path:'/todo/list',
+      name:'TodoList',
+      component:()=>import('../components/todo/TodoList.vue')
+    },
+    {
+      path:'/todo/view/:id',
+      name:'todoView',
+      component:()=>import('../components/todo/TodoView.vue')
     }
   ]
 })

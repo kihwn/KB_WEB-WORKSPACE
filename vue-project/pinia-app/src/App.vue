@@ -11,6 +11,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/counter">카운터</RouterLink>
+        <RouterLink to="/calculator">계산기</RouterLink>
       </nav>
     </div>
     
